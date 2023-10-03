@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - goreleaser build --snapshot --clean
+  changelog-next:
+    cmds:
+      - git-chglog --next-tag 2.0.0 -o CHANGELOG.md
+  changelog:
+    cmds:
+      - git-chglog -o CHANGELOG.md $(git describe --tags $(git rev-list --tags --max-count=1))
