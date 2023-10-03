@@ -3,7 +3,7 @@ version: '3'
 tasks:
   build:
     cmds:
-      - goreleaser build --snapshot --clean
+      - wails build
   changelog-next:
     cmds:
       - git-chglog --next-tag 2.0.0 -o CHANGELOG.md
